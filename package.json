@@ -21,6 +21,12 @@
 				"path": "./snippets/ampl.json"
 			}
 		],
+		"keybindings": [{
+			"command": "ampl.runFile",
+			"key": "ctrl+enter",
+			"mac": "cmd+enter",
+			"when": "editorTextFocus && editorLangId == 'ampl'"
+		}],
 		"commands": [
 			{
 				"command": "ampl.openConsole",
