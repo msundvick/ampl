@@ -1,0 +1,181 @@
+{
+    "Set Data": {
+        "prefix": [
+            "set"
+        ],
+        "body": [
+            "set ${SET_NAME} := ${Element};"
+        ],
+        "description": "The data for a set"
+    },
+    "Set Declaration": {
+        "prefix": [
+            "set"
+        ],
+        "body": [
+            "set ${SET_NAME};"
+        ],
+        "description": "Declares a set"
+    },
+    "Param Scalar": {
+        "prefix": [
+            "param"
+        ],
+        "body": [
+            "param ${Name} := ${Value};"
+        ],
+        "description": "The data for a single parameter"
+    },
+    "Param Array": {
+        "prefix": [
+            "param"
+        ],
+        "body": [
+            "param ${Name} :=",
+            "${Element} ${Value}",
+            ";"
+        ],
+        "description": "The data for an indexed parameter"
+    },
+    "Param Multiple": {
+        "prefix": [
+            "param"
+        ],  
+        "body": [
+            "param: ${Name1} ${Name2} :=",
+            "${Element} ${Value1} ${Value2}",
+            ";"
+        ],
+        "description": "Defines several indexed parameters over the same set"
+    },
+    "Param Data Table": {
+        "prefix": [
+            "param"
+        ],
+        "body": [
+            "param ${Name} :",
+            "\t\t\t${Element1}\t${Element2} :=",
+            "${Element3}\t${Value1}\t\t${Value2}",
+            ";"
+        ],
+        "description": "Simple table layout"
+    },
+    "Param Declaration": {
+        "prefix": [
+            "param"
+        ],
+        "body": [
+            "param ${Name} {${SET}};"
+        ],
+        "description": "Declares a parameter"
+    },
+    "Variable": {
+        "prefix": [
+            "var"
+        ],
+        "body": [
+            "var ${Name} {i in ${SET}}"
+        ],
+        "description": "Simple variable definition"
+    },
+    "Minimize": {
+        "prefix": [
+            "minimize"
+        ],
+        "body": [
+            "minimize Objective:",
+            "\tsum{i in ${SET}} ${Var}[i]",
+            ";"
+        ],
+        "description": "Minimization objective function"
+    },
+    "Maximize": {
+        "prefix": [
+            "maximize"
+        ],
+        "body": [
+            "maximize Objective:",
+            "\tsum{i in ${SET}} ${Var}[i]",
+            ";"
+        ],
+        "description": "Maximization objective function"
+    },
+    "Constraint": {
+        "prefix": [
+            "subject to"
+        ],
+        "body": [
+            "subject to ${Constraint} {i in ${SET1}}:",
+            "\tsum{j in ${SET2}} ${Var}[i,j] <= ${Param}[i]",
+            ";"
+        ],
+        "description": "Adds a constraint to the model"
+    },
+    "For Loop": {
+        "prefix": [
+            "for"
+        ],
+        "body": [
+            "for {i in ${SET}} {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Iterate over the elements of a set"
+    },
+    "Repeat While Loop": {
+        "prefix": [
+            "repeat",
+            "while"
+        ],
+        "body": [
+            "repeat {",
+            "\t$0",
+            "} while ${Condition};"
+        ]
+    },
+    "While Loop": {
+        "prefix": [
+            "repeat",
+            "while"
+        ],
+        "body": [
+            "repeat while ${Condition} {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "Repeat Until Loop": {
+        "prefix": [
+            "repeat",
+            "until"
+        ],
+        "body": [
+            "repeat {",
+            "\t$0",
+            "} until ${Condition};"
+        ]
+    },
+    "Until Loop": {
+        "prefix": [
+            "repeat",
+            "until"
+        ],
+        "body": [
+            "repeat until ${Condition} {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "If Statement": {
+        "prefix": [
+            "if"
+        ],
+        "body": [
+            "if ${Condition} then {",
+            "\t$0",
+            "} else {",
+            "\t$1",
+            "}"
+        ]
+    }
+}
