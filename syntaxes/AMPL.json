@@ -1,0 +1,10 @@
+{ "name": "AMPL",
+    "scopeName": "source.ampl",
+    "fileTypes": ["mod", "dat", "run"],
+    "patterns": [
+        { "include": "#expression" }
+    ],
+    "repository": {
+        
+    }
+  }

@@ -7,7 +7,7 @@
 		"vscode": "^1.36.0"
 	},
 	"categories": [
-		"Other"
+		"Programming Languages"
 	],
 	"activationEvents": [
 		"onCommand:ampl.openConsole",
@@ -24,7 +24,18 @@
 				"command": "ampl.runFile",
 				"title": "AMPL: Include File"
 			}
-		]
+		],
+		"languages": [{
+			"id": "ampl",
+            "aliases": ["AMPL", "ampl"],
+            "extensions": [".mod",".dat",".run"],
+            "configuration": "./language-configuration.json"
+		}],
+		"grammars": [{
+            "language": "ampl",
+            "scopeName": "source.ampl",
+            "path": "./syntaxes/AMPL.tmLanguage.json"
+        }]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
