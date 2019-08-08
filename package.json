@@ -3,7 +3,10 @@
 	"displayName": "AMPL",
 	"description": "Run AMPL files in VS Code",
 	"version": "0.0.1",
-	"publisher": "Michael Sundvick",
+	"publisher": "michael-sundvick",
+	"author": {
+		"name": "Michael Sundvick"
+	},
 	"homepage": "https://github.com/Microsoft/vscode-wordcount/blob/master/README.md",
 	"license": "SEE LICENSE IN LICENSE.txt",
 	"repository": {
