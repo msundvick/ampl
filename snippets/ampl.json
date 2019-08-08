@@ -4,7 +4,7 @@
             "set"
         ],
         "body": [
-            "set ${SET_NAME} := ${Element};"
+            "set ${1:SET_NAME} := ${2:Element};"
         ],
         "description": "The data for a set"
     },
@@ -13,7 +13,7 @@
             "set"
         ],
         "body": [
-            "set ${SET_NAME};"
+            "set ${1:SET_NAME};"
         ],
         "description": "Declares a set"
     },
@@ -22,7 +22,7 @@
             "param"
         ],
         "body": [
-            "param ${Name} := ${Value};"
+            "param ${1:Name} := ${2:Value};"
         ],
         "description": "The data for a single parameter"
     },
@@ -31,8 +31,8 @@
             "param"
         ],
         "body": [
-            "param ${Name} :=",
-            "${Element} ${Value}",
+            "param ${1:Name} :=",
+            "${2:Element} ${3:Value}",
             ";"
         ],
         "description": "The data for an indexed parameter"
@@ -42,8 +42,8 @@
             "param"
         ],  
         "body": [
-            "param: ${Name1} ${Name2} :=",
-            "${Element} ${Value1} ${Value2}",
+            "param: ${1:Name1} ${2:Name2} :=",
+            "${3:Element} ${4:Value1} ${5:Value2}",
             ";"
         ],
         "description": "Defines several indexed parameters over the same set"
@@ -53,9 +53,9 @@
             "param"
         ],
         "body": [
-            "param ${Name} :",
-            "\t\t\t${Element1}\t${Element2} :=",
-            "${Element3}\t${Value1}\t\t${Value2}",
+            "param ${1:Name} :",
+            "\t\t\t${2:Element1}\t${3:Element2} :=",
+            "${4:Element3}\t${5:Value1}\t\t${6:Value2}",
             ";"
         ],
         "description": "Simple table layout"
@@ -65,7 +65,7 @@
             "param"
         ],
         "body": [
-            "param ${Name} {${SET}};"
+            "param ${1:Name} {${2:SET}};"
         ],
         "description": "Declares a parameter"
     },
@@ -74,7 +74,7 @@
             "var"
         ],
         "body": [
-            "var ${Name} {i in ${SET}}"
+            "var ${1:Name} {i in ${2:SET}}"
         ],
         "description": "Simple variable definition"
     },
@@ -84,7 +84,7 @@
         ],
         "body": [
             "minimize Objective:",
-            "\tsum{i in ${SET}} ${Var}[i]",
+            "\tsum{i in ${1:SET}} ${2:Var}[i]",
             ";"
         ],
         "description": "Minimization objective function"
@@ -95,7 +95,7 @@
         ],
         "body": [
             "maximize Objective:",
-            "\tsum{i in ${SET}} ${Var}[i]",
+            "\tsum{i in ${1:SET}} ${2:Var}[i]",
             ";"
         ],
         "description": "Maximization objective function"
@@ -105,8 +105,8 @@
             "subject to"
         ],
         "body": [
-            "subject to ${Constraint} {i in ${SET1}}:",
-            "\tsum{j in ${SET2}} ${Var}[i,j] <= ${Param}[i]",
+            "subject to ${1:Constraint} {i in ${2:SET1}}:",
+            "\tsum{j in ${3:SET2}} ${4:Var}[i,j] <= ${5:Param}[i]",
             ";"
         ],
         "description": "Adds a constraint to the model"
@@ -116,7 +116,7 @@
             "for"
         ],
         "body": [
-            "for {i in ${SET}} {",
+            "for {i in ${1:SET}} {",
             "\t$0",
             "}"
         ],
@@ -130,7 +130,7 @@
         "body": [
             "repeat {",
             "\t$0",
-            "} while ${Condition};"
+            "} while ${1:Condition};"
         ]
     },
     "While Loop": {
@@ -139,7 +139,7 @@
             "while"
         ],
         "body": [
-            "repeat while ${Condition} {",
+            "repeat while ${1:Condition} {",
             "\t$0",
             "}"
         ]
@@ -152,7 +152,7 @@
         "body": [
             "repeat {",
             "\t$0",
-            "} until ${Condition};"
+            "} until ${1:Condition};"
         ]
     },
     "Until Loop": {
@@ -161,7 +161,7 @@
             "until"
         ],
         "body": [
-            "repeat until ${Condition} {",
+            "repeat until ${1:Condition} {",
             "\t$0",
             "}"
         ]
@@ -171,11 +171,12 @@
             "if"
         ],
         "body": [
-            "if ${Condition} then {",
+            "if ${1:Condition} then {",
             "\t$0",
             "} else {",
-            "\t$1",
+            "\t",
             "}"
         ]
-    }
+    },
+    
 }
