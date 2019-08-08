@@ -15,6 +15,18 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "ampl",
+			"properties": {
+				"ampl.pathToExecutable": {
+					"type": "string",
+					"scope": "machine",
+					"default": "D:\\amplide.mswin64\\ampl.exe",
+					"description": "Specifies the path to the AMPL command executable."
+				}
+			}
+		},
 		"snippets": [
 			{
 				"language": "ampl",

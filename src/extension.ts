@@ -1,6 +1,7 @@
 
 import * as vscode from 'vscode';
 import * as path from 'path';
+import { isUndefined } from 'util';
 
 let g_terminal: vscode.Terminal;
 let terminal_open: boolean = false;
@@ -47,7 +48,11 @@ export function activate(context: vscode.ExtensionContext) {
 export function openAMPLConsole() {
 	g_terminal = vscode.window.createTerminal({name: "AMPL"});
 	terminal_open = true;
-	writeToConsole('ampl');
+	let path = vscode.workspace.getConfiguration('ampl').get<string>('pathToExecutable');
+	if (path == "" || isUndefined(path)) {
+		path = "ampl";
+	}
+	writeToConsole(path);
 	g_terminal.show(true);
 }
 
