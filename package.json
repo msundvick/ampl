@@ -3,11 +3,20 @@
 	"displayName": "AMPL",
 	"description": "Run AMPL files in VS Code",
 	"version": "0.0.1",
+	"publisher": "Michael Sundvick",
+	"homepage": "https://github.com/Microsoft/vscode-wordcount/blob/master/README.md",
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kynac1/ampl"
+	},
+	"icon": "resources/logo.png",
 	"engines": {
 		"vscode": "^1.36.0"
 	},
 	"categories": [
-		"Programming Languages"
+		"Programming Languages",
+		"Snippets"
 	],
 	"activationEvents": [
 		"onCommand:ampl.openConsole",
@@ -77,6 +86,7 @@
 		"mocha": "^6.1.4",
 		"typescript": "^3.3.1",
 		"tslint": "^5.12.1",
-		"vscode-test": "^1.0.2"
+		"vscode-test": "^1.0.2",
+		"path": "^0.12.7"
 	}
 }
