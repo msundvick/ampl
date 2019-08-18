@@ -2,7 +2,7 @@
 	"name": "ampl",
 	"displayName": "AMPL",
 	"description": "Run AMPL files in VS Code",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "michael-sundvick",
 	"author": {
 		"name": "Michael Sundvick"
@@ -15,7 +15,7 @@
 	},
 	"icon": "resources/logo.png",
 	"engines": {
-		"vscode": "^1.36.0"
+		"vscode": "^1.20.0"
 	},
 	"categories": [
 		"Programming Languages",
@@ -90,7 +90,7 @@
 		"@types/glob": "^7.1.1",
 		"@types/mocha": "^5.2.6",
 		"@types/node": "^10.12.21",
-		"@types/vscode": "^1.36.0",
+		"@types/vscode": "^1.20.0",
 		"glob": "^7.1.4",
 		"mocha": "^6.1.4",
 		"typescript": "^3.3.1",
