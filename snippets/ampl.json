@@ -74,7 +74,7 @@
             "var"
         ],
         "body": [
-            "var ${1:Name} {i in ${2:SET}}"
+            "var ${1:Name} {i in ${2:SET}};"
         ],
         "description": "Simple variable definition"
     },
@@ -118,7 +118,7 @@
         "body": [
             "for {i in ${1:SET}} {",
             "\t$0",
-            "}"
+            "};"
         ],
         "description": "Iterate over the elements of a set"
     },
@@ -141,7 +141,7 @@
         "body": [
             "repeat while ${1:Condition} {",
             "\t$0",
-            "}"
+            "};"
         ]
     },
     "Repeat Until Loop": {
@@ -163,7 +163,7 @@
         "body": [
             "repeat until ${1:Condition} {",
             "\t$0",
-            "}"
+            "};"
         ]
     },
     "If Statement": {
@@ -175,7 +175,7 @@
             "\t$0",
             "} else {",
             "\t",
-            "}"
+            "};"
         ]
     }
 }
