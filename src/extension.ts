@@ -46,14 +46,12 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 export function openAMPLConsole() {
-	g_terminal = vscode.window.createTerminal({name: "AMPL"});
-	terminal_open = true;
+	openConsole();
 	let path = vscode.workspace.getConfiguration('ampl').get<string>('pathToExecutable');
-	if (path == "" || isUndefined(path)) {
+	if (path === "" || isUndefined(path)) {
 		path = "ampl";
 	}
-	writeToConsole(path);
-	g_terminal.show(true);
+	g_terminal.sendText(path);
 }
 
 function writeToConsole(msg: string) {
@@ -62,11 +60,9 @@ function writeToConsole(msg: string) {
 	}
 	g_terminal.sendText(msg);
 }
-/*
-function activate(context) {
-   var currentlyOpenTabfilePath = vscode.window.activeTextEditor.document.fileName;
-   var currentlyOpenTabfileName = path.basename(currentlyOpenTabfilePath);
-   //...
-}
 
-*/
+function openConsole() {
+	g_terminal = vscode.window.createTerminal({name: "AMPL"});
+	terminal_open = true;
+	g_terminal.show(true);
+}
