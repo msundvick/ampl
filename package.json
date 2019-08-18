@@ -36,6 +36,12 @@
 					"scope": "machine",
 					"default": "D:\\amplide.mswin64\\ampl.exe",
 					"description": "Specifies the path to the AMPL command executable."
+				},
+				"ampl.useRelativePath": {
+					"type": "boolean",
+					"scope": "machine",
+					"default": true,
+					"description": "Whether to use a relative path to files when running in the console."
 				}
 			}
 		},

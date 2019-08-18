@@ -18,17 +18,22 @@ export function activate(context: vscode.ExtensionContext) {
 			return;
 		}
 		let document = editor.document;
+		
 		if (document.isUntitled) {
 			document.save();
 		}
 		else {
+			let name = document.fileName;
+			if (vscode.workspace.getConfiguration('ampl').get<string>('useRelativePath')) {
+				name = vscode.workspace.asRelativePath(document.fileName);
+			}
 			let ext = path.extname(document.fileName);
 			if (ext == '.dat') {
-				writeToConsole(`data "${document.fileName}";`);
+				writeToConsole(`data "${name}";`);
 			} else if (ext == '.mod') {
-				writeToConsole(`model "${document.fileName}";`);
+				writeToConsole(`model "${name}";`);
 			} else if (ext == '.run') {
-				writeToConsole(`include "${document.fileName}"`);
+				writeToConsole(`include "${name}"`);
 			}
 		}
 	});
