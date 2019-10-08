@@ -30,6 +30,10 @@
           },
           {
             "include": "#operator"
+          },
+          {
+            "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\b",
+            "name": "variable.other.ampl"
           }
       ]
     },
@@ -70,7 +74,7 @@
       "match": "\\b((and|arc|binary|card|check|circular|close|coef|coeff|commands|cover|cross|data|default|dimen|dimension|display|drop|else|end|exists|first|fix|for|forall|format|from|function|if|in|include|integer|last|let|maximize|member|minimize|max|min|model|net_in|net_out|next|nextw|node|not|obj|objective|option|or|ord|ord0|ordered|param|pipe|problem|prev|prevw|print|printf|product|prod|quit|repeat|reset|restore|reversed|set|shell|solution|solve|subject to|subj to|snapshot|solexpand|suffix|sum|symbolic|then|to|to_come|unfix|union|update|var|while|within|write)\\b)|s\\.t\\."
     },
     "suffix":  {
-      "name": "keyword.ampl",
+      "name": "support.suffix.ampl",
       "match": "\\.([as]?status|defeqn|defvar|exitcode|message|result|lb[012s]?|ub[012s]?|[ul]?rc|val|init0?|body|dinit0?|[ul]?dual|[ul]?slack)|(<<|>>)"
     },
     "math":  {
