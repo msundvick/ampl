@@ -69,15 +69,22 @@
 		],
 		"languages": [{
 			"id": "ampl",
-            "aliases": ["AMPL", "ampl"],
-            "extensions": [".mod",".dat",".run"],
-            "configuration": "./language-configuration.json"
+			"aliases": ["AMPL", "ampl"],
+			"extensions": [".mod",".dat",".run"],
+			"configuration": "./language-configuration.json"
 		}],
 		"grammars": [{
-            "language": "ampl",
-            "scopeName": "source.ampl",
-            "path": "./syntaxes/AMPL.tmLanguage.json"
-        }]
+			"language": "ampl",
+			"scopeName": "source.ampl",
+			"path": "./syntaxes/AMPL.tmLanguage.json"
+		}],
+		"menus": {
+			"editor/context": [{
+				"command": "ampl.runFile",
+				"title": "AMPL: Include File",
+				"when": "editorTextFocus && editorLangId == ampl"
+			}]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
