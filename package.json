@@ -2,7 +2,7 @@
 	"name": "ampl",
 	"displayName": "AMPL",
 	"description": "Run AMPL files in VS Code",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "michael-sundvick",
 	"author": {
 		"name": "Michael Sundvick"
