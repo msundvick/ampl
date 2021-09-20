@@ -33,7 +33,7 @@ export function activate(context: vscode.ExtensionContext) {
 			} else if (ext == '.mod') {
 				writeToConsole(`model "${name}";`);
 			} else if (ext == '.run') {
-				writeToConsole(`include "${name}"`);
+				writeToConsole(`include "${name}";`);
 			}
 		}
 	});
