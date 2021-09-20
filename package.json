@@ -2,7 +2,7 @@
 	"name": "ampl",
 	"displayName": "AMPL",
 	"description": "Run AMPL files in VS Code",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"publisher": "michael-sundvick",
 	"author": {
 		"name": "Michael Sundvick"
@@ -51,12 +51,14 @@
 				"path": "./snippets/ampl.json"
 			}
 		],
-		"keybindings": [{
-			"command": "ampl.runFile",
-			"key": "ctrl+enter",
-			"mac": "cmd+enter",
-			"when": "editorTextFocus && editorLangId == 'ampl'"
-		}],
+		"keybindings": [
+			{
+				"command": "ampl.runFile",
+				"key": "ctrl+enter",
+				"mac": "cmd+enter",
+				"when": "editorTextFocus && editorLangId == 'ampl'"
+			}
+		],
 		"commands": [
 			{
 				"command": "ampl.openConsole",
@@ -67,23 +69,36 @@
 				"title": "AMPL: Include File"
 			}
 		],
-		"languages": [{
-			"id": "ampl",
-			"aliases": ["AMPL", "ampl"],
-			"extensions": [".mod",".dat",".run"],
-			"configuration": "./language-configuration.json"
-		}],
-		"grammars": [{
-			"language": "ampl",
-			"scopeName": "source.ampl",
-			"path": "./syntaxes/AMPL.tmLanguage.json"
-		}],
+		"languages": [
+			{
+				"id": "ampl",
+				"aliases": [
+					"AMPL",
+					"ampl"
+				],
+				"extensions": [
+					".mod",
+					".dat",
+					".run"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "ampl",
+				"scopeName": "source.ampl",
+				"path": "./syntaxes/AMPL.tmLanguage.json"
+			}
+		],
 		"menus": {
-			"editor/context": [{
-				"command": "ampl.runFile",
-				"title": "AMPL: Include File",
-				"when": "editorTextFocus && editorLangId == ampl"
-			}]
+			"editor/context": [
+				{
+					"command": "ampl.runFile",
+					"title": "AMPL: Include File",
+					"when": "editorTextFocus && editorLangId == ampl"
+				}
+			]
 		}
 	},
 	"scripts": {
@@ -91,7 +106,8 @@
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile",
-		"test": "node ./out/test/runTest.js"
+		"test": "node ./out/test/runTest.js",
+		"deploy": "vsce publish --yarn"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
@@ -100,9 +116,11 @@
 		"@types/vscode": "^1.20.0",
 		"glob": "^7.1.4",
 		"mocha": "^6.1.4",
-		"typescript": "^3.3.1",
+		"path": "^0.12.7",
 		"tslint": "^5.12.1",
+		"typescript": "^3.3.1",
+		"vsce": "^1.99.0",
 		"vscode-test": "^1.0.2",
-		"path": "^0.12.7"
+		"yarn": "^1.22.11"
 	}
 }
